@@ -15,7 +15,7 @@ public class HttpRequest {
 	// HTTP GET request
 	public static void sendGet() throws Exception {
  		String USER_AGENT = "Mozilla/5.0";
-		String url = "http://www.google.com/search?q=mkyong";
+		String url = "http://www.google.com/search";
  
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
