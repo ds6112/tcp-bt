@@ -8,6 +8,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.lang.Class;
 
 import GivenTools.*;
 import HelperTools.*;
@@ -36,7 +37,9 @@ public class RUBTClient {
                     //ToolKit.printString(torrentBuffer, false, 10);
                     //Decode the torrent byte array
                     Object torrentDecode = Bencoder2.decode(tfArray);
-                    ToolKit.print(torrentDecode, 0);
+                    Class cls = torrentDecode.getClass();  
+    				System.out.println("The type of the object is: " + cls.getName());  
+                    //ToolKit.print(torrentDecode, 0);
                 } catch (BencodingException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -49,7 +52,7 @@ public class RUBTClient {
             // Check if second argument is a valid port number
             Path saveFile = Paths.get(args[0]);
             try {
-            HttpRequest.sendGet();
+            HttpRequest.GetRequest("http://128.6.5.130:6969/announce");
 		    } catch (Exception e){
 		    	e.printStackTrace();
 		    }        

@@ -12,26 +12,14 @@ public class HttpRequest {
  
 	
  
-	// HTTP GET request
-	public static void sendGet() throws Exception {
- 		String USER_AGENT = "Mozilla/5.0";
-		String url = "http://www.google.com/search";
- 
-		URL obj = new URL(url);
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
- 
-		// optional default is GET
-		con.setRequestMethod("GET");
- 
-		//add request header
-		con.setRequestProperty("User-Agent", USER_AGENT);
- 
-		int responseCode = con.getResponseCode();
-		System.out.println("\nSending 'GET' request to URL : " + url);
-		System.out.println("Response Code : " + responseCode);
+	public static void GetRequest(String url) throws Exception {
+		URL u = new URL(url);
+		HttpURLConnection c = (HttpURLConnection) u.openConnection();
+		c.setRequestMethod("GET");
+		c.setRequestProperty("User-Agent", "Mozilla/5.0");
  
 		BufferedReader in = new BufferedReader(
-		        new InputStreamReader(con.getInputStream()));
+		        new InputStreamReader(c.getInputStream()));
 		String inputLine;
 		StringBuffer response = new StringBuffer();
  
