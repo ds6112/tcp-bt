@@ -36,6 +36,7 @@ public class RUBTClient {
 					//Object torrentDecode = Bencoder2.decode(tfArray);
 			        TorrentInfo tf = new TorrentInfo(tfArray);
 			        System.out.println("Announce: " + tf.announce_url);
+			        System.out.println(tf.info_hash);
 			        System.out.println("Piece Length: " + tf.piece_length);
 			        System.out.println("File name: " + tf.file_name);
 			        System.out.println("File length: " + tf.file_length);
